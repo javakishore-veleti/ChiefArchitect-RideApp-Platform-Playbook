@@ -6,7 +6,7 @@ This repository captures the strategic, technical, and operational responsibilit
 
 ## Structure Overview
 
-### 🧭 Enterprise-Wide Responsibilities
+### Enterprise-Wide Responsibilities
 Comprehensive architectural and leadership areas:
 
 - [Platform Strategy and Blueprinting](Enterprise-Wide-Responsibilities/Platform-Strategy-and-Blueprinting.md)
@@ -30,7 +30,7 @@ Comprehensive architectural and leadership areas:
 - [Event Storming and Collaborative Design](Enterprise-Wide-Responsibilities/Event-Storming.md)
 - [Architecture Evolution Strategy](Enterprise-Wide-Responsibilities/Architecture-Evolution.md)
 
-### 🎯 Strategic Initiatives
+### Strategic Initiatives
 Key initiatives that move the architecture forward:
 
 - [Open API Program](Strategic-Initiatives/Open-API-Program.md)
@@ -53,7 +53,7 @@ Key initiatives that move the architecture forward:
 - [Innovation Incubation Framework](Strategic-Initiatives/Innovation-Incubation.md)
 - [Business-Driven Architecture Roadmaps](Strategic-Initiatives/Architecture-Roadmaps.md)
 
-### 🤖 AI & ML Systems (Standalone Organization)
+### AI & ML Systems (Standalone Organization)
 A dedicated track for AI/ML initiatives:
 
 - [AI/ML Enablement Strategy](AI-ML-Systems/AI-ML-Enablement-Strategy.md)
@@ -77,7 +77,7 @@ A dedicated track for AI/ML initiatives:
 - [Responsible AI Frameworks](AI-ML-Systems/Responsible-AI-Framework.md)
 - [Model Evaluation and Audit Pipelines](AI-ML-Systems/Model-Evaluation.md)
 
-### 🧰 Architecture Playbooks
+### Architecture Playbooks
 Design patterns and best practices:
 
 - [Event-Driven Architecture](Architecture-Playbooks/Event-Driven-Architecture.md)
@@ -101,7 +101,7 @@ Design patterns and best practices:
 - [Data Versioning and Backfills](Architecture-Playbooks/Data-Versioning.md)
 - [Immutable Infrastructure](Architecture-Playbooks/Immutable-Infrastructure.md)
 
-### 🧮 Governance and Maturity
+### Governance and Maturity
 Architecture control and evaluation mechanisms:
 
 - [Capability Maturity Model](Governance-and-Maturity/Capability-Maturity-Model.md)
@@ -125,7 +125,7 @@ Architecture control and evaluation mechanisms:
 - [Centralized Monitoring Policy](Governance-and-Maturity/Centralized-Monitoring.md)
 - [Business Continuity Planning](Governance-and-Maturity/Business-Continuity.md)
 
-### 📁 Templates and References
+### Templates and References
 Reusable frameworks for consistency and review:
 
 - [ADR Template](Templates-and-References/ADR-Template.md)
@@ -150,5 +150,3 @@ Reusable frameworks for consistency and review:
 - [Developer Onboarding Template](Templates-and-References/Developer-Onboarding.md)
 
 ---
-
-Each section is written as a `README.md` or `.md` file that captures real-world architectural leadership, patterns, decisions, and governance. Contributions are structured and themed to align with a real Chief Architect role in a fast-scaling platform enterprise.
