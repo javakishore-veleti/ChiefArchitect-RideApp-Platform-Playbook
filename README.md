@@ -2,7 +2,6 @@
 
 This repository captures the strategic, technical, and operational responsibilities of a Chief Architect for a large-scale, enterprise-grade ride-hailing or delivery platform.
 
----
 
 ## Structure Overview
 
