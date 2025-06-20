@@ -5,6 +5,9 @@ Establish foundational services and patterns that apply consistently across all 
 
 ---
 
+![Cross-Cutting Concerns Visual](./Cross_Cutting_Concerns_01.png)
+
+
 ## Key Cross-Cutting Capabilities
 
 ### 1. Authentication and Authorization
