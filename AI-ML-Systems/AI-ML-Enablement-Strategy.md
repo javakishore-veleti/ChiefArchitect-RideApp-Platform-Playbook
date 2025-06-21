@@ -1,72 +1,69 @@
-# Real-Time Decision Engines
+# AI/ML Enablement Strategy
 
 ## Objective
-Design and integrate real-time decision engines to power intelligent, contextual, and time-sensitive platform behaviors such as pricing, dispatching, fraud prevention, and routing—at scale and with low latency.
+Create a comprehensive enablement strategy that accelerates AI/ML innovation across teams, while maintaining alignment with business goals, scalability, ethical standards, and technical excellence.
 
 ---
 
 ## Strategic Goals
-- Enable dynamic, rule-based or ML-driven decisions under 100ms latency
-- Separate decision logic from core service code for agility and auditability
-- Incorporate contextual, streaming, and historical data into decision cycles
-- Ensure observability and traceability of automated decisions
+- Scale AI/ML capabilities across engineering, product, and operations
+- Empower teams with tools, processes, and guidance to build, deploy, and manage ML models
+- Centralize foundational infrastructure while enabling decentralized innovation
+- Align model development with business value, data governance, and regulatory compliance
 
 ---
 
-## Key Use Cases
-| Domain | Decision Type |
-|--------|---------------|
-| Pricing | Surge multiplier, promotional discounts, fare caps |
-| Dispatch | Driver selection, ETA prediction, zone routing |
-| Fraud | Location anomaly detection, duplicate booking patterns |
-| Loyalty | Reward issuance, gamified incentives, tier upgrades |
-| Routing | Geo-optimization, traffic-aware re-routing, pooling logic |
+## Enablement Pillars
+
+### 1. **Platform Foundations**
+- Unified ML infrastructure (training, serving, monitoring)
+- Feature stores with online/offline parity
+- Model registry with versioning and lineage
+- Automated CI/CD for ML pipelines
+
+### 2. **Reusable ML Assets**
+- Pre-built components: embeddings, estimators, scoring wrappers
+- Templates for forecasting, classification, ranking
+- AutoML workflows for citizen data scientists
+- Shared evaluation suites and baselines
+
+### 3. **Team Empowerment & Training**
+- Internal bootcamps and certifications
+- Tech talks and office hours for MLOps, modeling
+- Sandbox environments for experimentation
+- Model review clinics and architecture playbooks
+
+### 4. **Operational Excellence**
+- SLAs for model serving, retraining, and refresh
+- Incident response workflows and rollback plans
+- Governance policies for fairness, explainability, and drift
+- Cost tracking and resource quota enforcement
+
+### 5. **Collaboration Models**
+- ML Guilds across teams to share learnings
+- Embed ML leads into product squads
+- Quarterly model portfolio reviews
+- Feedback loops between DS, Eng, and Ops
 
 ---
 
-## Architectural Patterns
-- Stateless microservice endpoints for scoring decisions
-- Pre-compiled decision policies with hot reload support
-- Event-driven triggers from Kafka or event bus
-- Sliding window aggregations via stream processors (e.g., Flink, Spark Structured Streaming)
-- In-memory feature cache with TTL and fallback logic
-
----
-
-## Technology Stack
-| Layer | Tools & Frameworks |
-|-------|---------------------|
-| Stream Ingestion | Kafka, Pulsar, AWS Kinesis |
-| Feature Engineering | Flink, Spark, DBT, Redis streams |
-| Decision Engines | Open Policy Agent (OPA), Hummingbird, Drools, custom ML APIs |
-| Feature Store | Feast, Redis, DuckDB |
-| Low-Latency Storage | Redis, ScyllaDB, Cassandra |
-| Monitoring | Prometheus, Grafana, Jaeger, custom rule logs |
-
----
-
-## Governance and Ops
-- Decision versioning and rollback (e.g., tagged rulesets or model IDs)
-- Human override workflows for sensitive or edge-case scenarios
-- Audit logs per decision with user impact tagging
-- Simulation sandbox for A/B testing new rules/models
-
----
-
-## Performance and SLAs
-- Sub-100ms response time for 95%+ of decision calls
-- Accuracy thresholds and alerting for rule/model drift
-- Warm startup and autoscaling to match burst demand
+## Tooling Ecosystem
+- Training: PyTorch, TensorFlow, Scikit-learn
+- Pipelines: Airflow, Kubeflow, MLflow
+- Monitoring: Evidently, Prometheus, Grafana
+- Serving: Seldon, TorchServe, Triton
+- Experiment tracking: Weights & Biases, Neptune
 
 ---
 
 ## Metrics of Success
-- Decision throughput and latency per service
-- % of decisions overridden or flagged for review
-- Uplift from decision personalization (CTR, conversion, revenue)
-- Cost per 10K decisions vs baseline
+- Time-to-production for new ML use cases
+- # of models deployed and monitored in production
+- % of teams using shared ML infrastructure
+- Model performance uplift over baselines
+- Compliance and audit readiness score
 
 ---
 
 ## Summary
-Real-time decision engines bring intelligence and agility into the core transactional fabric of the platform. By externalizing and optimizing this logic, the system evolves rapidly, adapts to signals instantly, and delivers personalized and efficient outcomes across business-critical workflows.
+A well-structured AI/ML enablement strategy accelerates impact by aligning people, platforms, and processes. By balancing central support with local innovation and enforcing responsible practices, organizations unlock the full potential of AI across their ecosystem.
