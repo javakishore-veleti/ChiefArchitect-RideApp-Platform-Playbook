@@ -77,6 +77,11 @@ A dedicated track for AI/ML initiatives:
 - [Model Evaluation and Audit Pipelines](AI-ML-Systems/Model-Evaluation.md)
 
 ### Architecture Playbooks
+
+A Playbook is a documented, reusable set of principles, steps, design decisions, templates, and guardrails that architects, engineers, and platform teams can refer to for implementing a specific architecture pattern or practice in a predictable, scalable, and secure manner.
+
+A Playbook, especially in the context of software architecture and platforms like RideShareApp platform, refers to a structured, actionable guide that outlines design patterns, implementation practices, and governance rules for solving recurring architectural challenges consistently and reliably.
+
 Design patterns and best practices:
 
 - [Event-Driven Architecture](Architecture-Playbooks/Event-Driven-Architecture.md)
