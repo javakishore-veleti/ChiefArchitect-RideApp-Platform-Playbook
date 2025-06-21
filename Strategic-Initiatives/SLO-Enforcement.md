@@ -74,3 +74,71 @@ Define how Service Level Objectives (SLOs) are specified, enforced, and integrat
 
 ## Summary
 The SLO enforcement strategy at RideShareApp bridges business outcomes with system reliability through measurable commitments, automated guardrails, and accountability rituals. This drives high-confidence innovation while maintaining user trust and operational excellence.
+
+## SLO Budget Examples – RideShareApp Platform
+
+
+### Example YAML configurations for domain-specific service budgets
+### These can be consumed by SLO tools like Nobl9, Datadog SLOs, or integrated into CI checks
+```yaml
+
+ride-matcher:
+  service: rider-booking-api
+  budgets:
+    latency:
+      p95_ms: 300
+      p99_ms: 450
+    cpu:
+      max_millicores: 500
+    memory:
+      max_mib: 512
+    error_rate:
+      max_percent: 0.5
+
+eta-predictor:
+  service: eta-prediction
+  budgets:
+    latency:
+      p95_ms: 400
+      cold_start_ms: 600
+    cpu:
+      max_vcpu: 1
+    memory:
+      max_gib: 1
+    feature_freshness:
+      max_delay_sec: 30
+
+pricing-engine:
+  service: dynamic-pricing-api
+  budgets:
+    latency:
+      p95_ms: 250
+    cpu:
+      max_millicores: 750
+    memory:
+      max_mib: 768
+    surge_computation:
+      max_duration_ms: 100
+
+fraud-detector:
+  service: fraud-scoring-api
+  budgets:
+    latency:
+      p95_ms: 200
+    inference_time:
+      max_ms: 150
+    cpu:
+      max_millicores: 600
+    memory:
+      max_mib: 512
+
+rider-app:
+  component: home-screen-load
+  budgets:
+    load_time:
+      max_initial_load_ms: 1000
+    bundle_size:
+      max_kb: 250
+    api_dependency_latency:
+      max_combined_p95_ms: 500
+```
