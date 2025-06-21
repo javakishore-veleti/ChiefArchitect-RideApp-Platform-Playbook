@@ -1,0 +1,53 @@
+# Data Retention Automation Templates – RideShareApp Platform
+
+# Example lifecycle configuration for S3, BigQuery, and Kafka based on TTL policies
+
+---
+
+# S3 Lifecycle Rule (for Parquet feature exports)
+rideapp-feature-store-s3:
+  lifecycle_rules:
+    - id: delete_expired_feature_vectors
+      prefix: features/
+      expiration:
+        days: 365
+      status: Enabled
+
+---
+
+# BigQuery Table TTL (partitioned by ingestion date)
+resource "google_bigquery_table" "trip_events" {
+  dataset_id = "rideapp_prod"
+  table_id   = "trip_events"
+  schema     = file("schemas/trip_events.json")
+
+  time_partitioning {
+    type = "DAY"
+    field = "event_timestamp"
+    expiration_ms = 15552000000 # 180 days
+  }
+}
+
+---
+
+# Kafka Topic Retention
+kafka_topics:
+  - name: driver.location.stream
+    retention.ms: 2592000000   # 30 days
+    cleanup.policy: delete
+
+  - name: surge.zone.compute
+    retention.ms: 7776000000   # 90 days
+    cleanup.policy: compact
+
+---
+
+# Metadata YAML for Dataset Schema PRs
+schema_metadata:
+  dataset: rider_feedback_survey
+  description: "Feedback collected after trip completion"
+  owner: data-insights@rideapp.com
+  retention_policy:
+    ttl_days: 365
+    delete_mode: automatic
+    masking_after_days: 90
