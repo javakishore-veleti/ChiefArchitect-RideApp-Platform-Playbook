@@ -1,65 +1,59 @@
-# Edge Compute Strategy – RideShareApp Platform
+# Federated Learning – Strategic Initiative for RideShareApp Platform
 
 ## Objective
-Define the strategic role of edge computing in the RideShareApp Platform to improve real-time responsiveness, reduce central latency, and support autonomous decisioning at city, fleet, and driver level.
+Enable privacy-preserving, edge-coordinated machine learning across the RideShareApp Platform by implementing federated learning strategies that train global models using local on-device data from riders and drivers—without centralizing raw data.
 
 ---
 
-## 1. Business Drivers for Edge Compute
-- **Sub-Second Rider Experience**: Enable ultra-low-latency booking and ETA estimation for high-density metro areas.
-- **Fleet & Vehicle Intelligence**: Perform driver behavior scoring, device health checks, and route prediction at edge nodes.
-- **Resilient Operation**: Maintain booking and pricing functionality during transient cloud outages or poor connectivity zones.
-- **Data Localization & Compliance**: Meet local regulations (e.g., GDPR, DPDP, regional cloud laws) by preprocessing at edge.
+## 1. Business Rationale
+- **Privacy Compliance**: Adhere to DPDP (India), GDPR (EU), and CCPA (US) regulations
+- **Data Localization**: Ensure sensitive rider/driver mobility data remains in-region
+- **Personalization**: Train location-specific ML models with hyper-local insights
+- **Edge Intelligence**: Enhance real-time predictions (e.g. ETA, pricing elasticity) on-device without roundtrip latency
 
 ---
 
-## 2. Edge Deployment Scenarios
-
-| Use Case                        | Edge Location              | Benefits                           |
-|-------------------------------|-----------------------------|------------------------------------|
-| Rider ETA Estimation           | Device + City Edge Node     | Reduced API round trips            |
-| Dynamic Surge Pricing          | Metro Zone Gateway Node     | Local demand inference             |
-| Fleet Monitoring               | On-Device (Driver App)      | Real-time alerts, lower latency    |
-| Offline Booking Support        | Driver App Cache + Edge CDN | Fallback matching during outages   |
-| Rider App Pre-Fetch            | Edge CDN + CloudFront       | Faster home screen load            |
-| Location Anomaly Detection     | Local Kafka Stream          | City-based fraud triage            |
+## 2. Use Cases
+| Domain           | Federated Learning Application                                                 |
+|------------------|----------------------------------------------------------------------------------|
+| ETA Prediction   | Train localized travel time estimators on driver trip data from mobile clients |
+| Fraud Detection  | On-device modeling to detect location spoofing or shared accounts              |
+| Driver Scoring   | Privacy-aware learning of satisfaction models without uploading raw behavior   |
+| Ride Suggestions | Personalization of rider intent from local trip history without central storage |
 
 ---
 
-## 3. Edge Stack Components
-- **Edge Nodes**: Micro-cloud appliances or metro-based regional cloud zones (e.g., AWS Wavelength, Akamai Edge)
-- **On-Device SDK**: Thin clients embedded in Driver/Rider app (Rust or Kotlin)
-- **Lightweight Models**: Quantized ONNX/TFLite models deployed via edge inference servers
-- **Messaging Layer**: MQTT + gRPC Gateway for bidirectional communication
-- **Edge Control Plane**: Central registry to sync models, config, policies, and updates
+## 3. Architecture Overview
+- **Client-Side SDK**: Embedded in mobile apps to enable secure model training using local trip history
+- **Federated Coordinator**: Server-side orchestrator for model update aggregation, selection, and distribution
+- **Secure Aggregation Layer**: Uses homomorphic encryption to protect individual gradients during transmission
+- **Model Registry**: Maintains versioned model artifacts for rollback, comparison, and audit
+- **Fallback Strategy**: Centralized global model used when client federation conditions aren't met
 
 ---
 
-## 4. Governance and Management
-- Each edge cluster must:
-  - Auto-register to the central service mesh with metadata (region, uptime SLA, capacity)
-  - Be observable via custom edge SLO dashboard (latency, message drop, cache hit rate)
-  - Support remote logging and rollback of edge workloads
-
-- Canary deployments validated via metro-specific traffic shadowing
-- SLA policies defined per region (e.g., 99.9% response SLA for Tokyo, Bangalore zones)
+## 4. Tooling & Infrastructure
+- **TensorFlow Federated / PySyft** for edge orchestration and privacy mechanisms
+- **MPC-enabled Aggregators** hosted on GCP Confidential VMs
+- **Secure Enclave-Enabled Clients** for encrypted local model computation
+- **Federated Data Lake** for synthetic and anonymized training diagnostics
 
 ---
 
-## 5. Security Considerations
-- Device attestation and certificate-based identity for edge agents
-- End-to-end encryption between edge → cloud → app
-- Firewall rules and regional ACLs for inbound traffic to edge zones
-- Signed edge packages and firmware with periodic verification
+## 5. Security & Compliance
+- **Zero Raw Data Transfer**: No trip or biometric data leaves the device
+- **Differential Privacy Guarantees**: Laplace noise injected into client updates
+- **Audit Trail**: All model update requests logged with `trace_id`, timestamp, hash digest
+- **Consent Flow**: Users explicitly opt-in through a versioned Terms-of-Service mechanism
 
 ---
 
-## 6. Roadmap
-- **Q2**: Edge node pilot in high-density metros (NYC, Bengaluru, Singapore)
-- **Q3**: Offline matching + route prediction fallback during partial cloud outages
-- **Q4**: Integrate edge ML model telemetry with model retraining loop
+## 6. Experimentation Plan
+- **Pilot Cities**: Bangalore, San Francisco, Jakarta – with opt-in user cohorts
+- **Evaluation Metrics**: Local vs. global model RMSE, client churn rate, data usage footprint
+- **Update Frequency**: Daily or weekly rounds based on rider/driver engagement volume
 
 ---
 
 ## Summary
-Edge computing enables the RideShareApp Platform to enhance real-time reliability, elevate user experiences in high-load metros, and support regional compliance needs. This strategy balances cost, reach, and intelligence across the core cloud and decentralized edge surfaces.
+Federated Learning unlocks a new privacy-first paradigm in RideShareApp's AI architecture. By moving computation closer to where the data is generated—on the phone—it enhances personalization and security while reinforcing user trust and global compliance mandates.
